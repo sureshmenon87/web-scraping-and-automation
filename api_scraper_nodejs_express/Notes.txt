@@ -1,0 +1,9 @@
+curl -X GET "http://localhost:9200/nodeapp-logs-*/_search?pretty&size=5&sort=@timestamp:desc"
+docker-compose down -v //Stop and remove volumes
+
+manually delete the lock
+docker exec -it filebeat sh
+rm -f /usr/share/filebeat/data/filebeat.lock
+exit
+docker-compose restart filebeat
+

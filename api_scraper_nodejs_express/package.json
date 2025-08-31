@@ -2,9 +2,11 @@
   "name": "api_scraper_nodejs_express",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon --exec ts-node src/server.ts"
+    "dev": "nodemon --watch src --exec \"node --loader ts-node/esm src/server.ts\"",
+    "build": "tsc",
+    "start": "node dist/server.js"
   },
   "keywords": [],
   "author": "",
